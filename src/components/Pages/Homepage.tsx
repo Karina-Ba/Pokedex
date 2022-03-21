@@ -10,7 +10,7 @@ export const HomePage: React.FC<IHomePage> = () => {
     const [pokemons, setPokemons] = useState<services.IPokemonData[]>()
     const [loading, setLoading] = useState<Boolean>(true)
     const [state, setState] = useState<JSX.Element>()
-    // const [currentPage, setCurrentPage] = useState<number>(1)
+    const [currentPage, setCurrentPage] = useState<number>(1)
     // const [cardsPerPage, setCardsPerPage] = useState<number>(12)
 
 
