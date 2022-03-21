@@ -1,5 +1,3 @@
-import React from 'react'
-
 export interface IPokemon {
     name: string
     url: string
@@ -32,7 +30,7 @@ async function getPokemonsBase(): Promise<IPokemon[]> {
 }
 
 async function getPokemonData(url: string): Promise<IPokemonData> {
-    const res = await fetch(<RequestInfo>url)
+    const res = await fetch(url as RequestInfo)
     const json_res = await res.json()
     const { name, sprites, stats, species, types } = json_res
     const pokemon = {
@@ -50,8 +48,8 @@ async function getPokemonData(url: string): Promise<IPokemonData> {
     return pokemon
 }
 
-async function getPokemonDesc(url: string): Promise<string> {
-    const res = await fetch(<RequestInfo>url)
+export async function getPokemonDesc(url: string): Promise<string> {
+    const res = await fetch(url as RequestInfo)
     const json_res = await res.json()
 
     return json_res.flavor_text_entries[0].flavor_text

@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import { IPokemonCard } from '../PokemonCard'
 import CSS from 'csstype';
 
@@ -54,7 +53,7 @@ export const PokemonPage: React.FC<IPokemonCard> = ({ pokemon, index, updateStat
     }
 
     return (
-        <div className='card page-card'>
+        <div className='page-card-container page-card'>
             <div className='card-container one-card'>
                 <div className='card-text'>{index}</div>
                 <img className='middle image-resize {' src={pokemon.image} alt="pokemon-image" />

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import * as services from '../services/app_services'
+import { getPokemonDesc } from '../services/app_services';
 import { PokemonPage } from './Pages/PokemonPage'
 
 export interface IPokemonCard {
@@ -14,8 +15,10 @@ export interface IPokemonCards {
 }
 
 export const PokemonCard: React.FC<IPokemonCard> = ({ pokemon, index, updateState }: IPokemonCard) => {
-    const onCardClick = (event: any) => {
+    const onCardClick = async (event: any) => {
         event.preventDefault();
+        // pokemon.description = await getPokemonDesc(pokemon.description)
+    
         updateState(
             <PokemonPage index={index} pokemon={pokemon} updateState={updateState}></PokemonPage>)
     };
@@ -37,7 +40,7 @@ export const PokemonCards: React.FC<IPokemonCards> = ({ pokemons, updateState }:
 
     useEffect(() => {
         let preindex = '#00' as string
-        if (!pokemonsMap && pokemons) {
+        if ((!pokemonsMap || pokemonsMap?.length != pokemons?.length) && pokemons) {
             let mappedPokemons = [] as IPokemonCard[]
             pokemons.forEach((pokemonData: services.IPokemonData, index: number) => {
                 if (index > 8 && index < 99) preindex = '#0'

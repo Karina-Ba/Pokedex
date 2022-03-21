@@ -29,13 +29,23 @@
 .cards {
   padding-left: 8%;
   padding-right: 8%;
-  padding-top: 100px; /*temp*/
   display: flex;
   flex-wrap: wrap;
   justify-content:space-around;
 }
 
 .card {
+  display: flex;
+  justify-content: center;
+  width: 23%;
+  height: 40%;
+  margin: 0% 0% 3% 0%;
+  border-radius: 9px;
+  background: #F7F7F9;
+  box-shadow: 2px 2px 4px 0px #00000026;
+}
+
+.page-card-container {
   display: flex;
   justify-content: center;
   width: 23%;
@@ -130,7 +140,7 @@ hr.solid {
   margin-top: 6%;
   margin-left: 2%;
   margin-bottom: 4%;
-  border: 0.5px solid #D7D7D7;
+  border: 1px solid #D7D7D7;
 }
 
 .type {
@@ -151,4 +161,97 @@ hr.solid {
   justify-content: center;
   justify-content: space-evenly;
   padding: 5%;
+}
+
+.loading {
+  width: 80%;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.search {
+  width: 100%;
+  border-radius: 9px;
+  background: #F7F7F9;
+  border: 1px solid #02016680;
+  padding: 7px;
+  padding-left: 10px;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  margin-right: 2%;
+}
+
+.search-button {
+  width: 30%;
+  padding: 5px;
+  border-radius: 9px;
+  background: #373299;
+  font-size: 1rem;
+  color: #F7F7F9;
+}
+
+@media screen and (max-width: 965px) {
+  .logo {
+    width: 80%;
+  }
+
+  .search-container {
+    width: 80%;
+  }
+
+  .page-card-container {
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+    margin-left: 0%;
+  }
+
+  hr.solid {
+    width: 80%;
+    margin-left: 6%;
+    margin-right: 6%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    border: 1px solid #D7D7D7;
+  }
+
+  .one-card {
+    width: 60%;
+    padding-top: 4%;
+    padding-left: 0%;
+  }
+
+  .two-card {
+    align-items: center;
+  }
+
+  .small-text {
+    text-align : center;
+  }
+
+  .rows {
+    display: inline;
+  }
+
+}
+
+@media screen and (max-width: 842px) {
+  .card {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .card {
+    width: 60%;
+  }
+
+  .page-card-container {
+    width: 80%;
+  }
 }
