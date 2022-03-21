@@ -30,7 +30,7 @@ export const HomePage: React.FC<IHomePage> = () => {
 
     return (
         <div className='App-container'>
-            <Header updateState={setState} pokemons={pokemons}></Header>
+            <Header pokemons={pokemons} updateState={setState}></Header>
             {state ? state : <img className='loading' src={Loading} alt="loading" />}
         </div>
     )
