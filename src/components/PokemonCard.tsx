@@ -40,7 +40,7 @@ export const PokemonCards: React.FC<IPokemonCards> = ({ pokemons, updateState }:
 
     useEffect(() => {
         let preindex = '#00' as string
-        if ((!pokemonsMap || pokemonsMap?.length != pokemons?.length) && pokemons) {
+        if ((!pokemonsMap || pokemonsMap?.length != pokemons?.length || pokemonsMap[0].pokemon !== pokemons[0]) && pokemons) {
             let mappedPokemons = [] as IPokemonCard[]
             pokemons.forEach((pokemonData: services.IPokemonData, index: number) => {
                 if (index > 8 && index < 99) preindex = '#0'

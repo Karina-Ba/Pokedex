@@ -13,10 +13,10 @@ export const Header: React.FC<IPokemonCards> = ({ pokemons, updateState }: IPoke
         event.preventDefault()
         const inputElement = document.getElementById("search") as HTMLInputElement;
         let filteredPokemons = [] as IPokemonData[] | undefined
-        filteredPokemons = pokemons?.filter(pokemon => pokemon.name === inputElement.value.toLowerCase())
+        filteredPokemons = pokemons?.filter(pokemon => pokemon.name.includes(inputElement.value.toLowerCase()))
         pokemons?.forEach(pokemon => {
             pokemon.types.forEach(type => {
-                if (type === inputElement.value.toLowerCase())
+                if (type.includes(inputElement.value.toLowerCase()))
                     filteredPokemons?.push(pokemon)
             })
         })

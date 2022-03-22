@@ -27,6 +27,7 @@
 }
 
 .cards {
+  width: -webkit-fill-available;
   padding-left: 8%;
   padding-right: 8%;
   display: flex;
