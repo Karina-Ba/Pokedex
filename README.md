@@ -1,3 +1,5 @@
+### `Pokedex`
+
 My first full React & Typescript project.
 
 A pokemon website with the information about the 100 most popular pokemons.
